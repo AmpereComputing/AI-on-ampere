@@ -5,8 +5,8 @@ import torch.nn.functional as F
 
 def weights_init(m):
     if isinstance(m, nn.Conv2d) or isinstance(m, nn.Linear):
-        nn.init.xavier_uniform(m.weight.data)
-        nn.init.constant(m.bias, 0.1)
+        nn.init.xavier_uniform_(m.weight.data)
+        nn.init.constant_(m.bias, 0.1)
 
 
 
@@ -95,7 +95,7 @@ class PNet(nn.Module):
 
     def forward(self, x):
         x = self.pre_layer(x)
-        label = F.sigmoid(self.conv4_1(x))
+        label = torch.sigmoid(self.conv4_1(x))
         offset = self.conv4_2(x)
         # landmark = self.conv4_3(x)
 
