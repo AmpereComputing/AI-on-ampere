@@ -4,9 +4,10 @@
   * python3 mtcnn_test.py
  
 # Training data prepraring
-  * download [WIDER FACE](http://shuoyang1213.me/WIDERFACE/) face detection data then store it into ./data_set/face_detection
-    * python3 ./anno_store/tool/format/transform.py change .mat(wider_face_train.mat) into .txt(anno_train.txt)
-  * download [CNN_FacePoint](http://mmlab.ie.cuhk.edu.hk/archive/CNN_FacePoint.htm) face detection and landmark data then store it into ./data_set/face_landmark
+  * download [WIDER Face Training Images](http://shuoyang1213.me/WIDERFACE/) face detection data then store it into ./data_set/face_detection/WIDERFACE/WIDER_train, unzip the tar ball file  
+  * download [Face annotations](http://shuoyang1213.me/WIDERFACE/) face split then store it into ./data_set/face_detection/WIDERFACE/wider_face_split, unzip the tar ball file  
+    * python3 ./anno_store/tool/format/transform.py change .mat into .txt(not necessary, .txt file already committed)  
+  * download [CNN_FacePoint](http://mmlab.ie.cuhk.edu.hk/archive/CNN_FacePoint.htm) face detection and landmark data then store it into ./data_set/face_landmark  
 
 # Training
   * preparing data for P-Net
