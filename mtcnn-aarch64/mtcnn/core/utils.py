@@ -28,9 +28,6 @@ def IoU(box, boxes):
     h = np.maximum(0, yy2 - yy1 + 1)
 
     inter = w * h
-    print(box)
-    print(box_area)
-    print(inter)
     ovr = np.true_divide(inter,(box_area + area - inter))
     #ovr = inter / (box_area + area - inter)
     return ovr
