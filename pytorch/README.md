@@ -1,10 +1,10 @@
 # Pytorch on aarch64
 
-Steps or scripts to run Pytorch on Aarch64
+Steps or scripts to run Pytorch on Ampere aarch64
 
 ## Installation
 
-1: Install Ubuntu18.04 on Aarch64
+1: Install Ubuntu18.04 on Ampere aarch64
 
 2: Install GUI  
    apt install ubuntu-mate-core ubuntu-mate-desktop  
