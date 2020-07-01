@@ -40,7 +40,7 @@ class LossFn:
         unmask = torch.eq(gt_label,0)
         mask = torch.eq(unmask,0)
         #convert mask to dim index
-        chose_index = torch.nonzero(mask.data)
+        chose_index = torch.nonzero(mask.data,as_tuple=False)
         chose_index = torch.squeeze(chose_index)
         #only valid element can effect the loss
         valid_gt_offset = gt_offset[chose_index,:]
@@ -54,7 +54,7 @@ class LossFn:
         gt_label = torch.squeeze(gt_label)
         mask = torch.eq(gt_label,-2)
 
-        chose_index = torch.nonzero(mask.data)
+        chose_index = torch.nonzero(mask.data,as_tuple=False)
         chose_index = torch.squeeze(chose_index)
 
         valid_gt_landmark = gt_landmark[chose_index, :]
