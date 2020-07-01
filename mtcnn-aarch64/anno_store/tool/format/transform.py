@@ -33,8 +33,9 @@ with open(target_file, 'w+') as f:
         line.append(str(data.image_name))
         line_count += 1
         for i,box in enumerate(data.bboxes):
+            boxxxyy=(box[0],box[1],box[0]+box[2],box[1]+box[3])
             box_count += 1
-            for j,bvalue in enumerate(box):
+            for j,bvalue in enumerate(boxxxyy):
                 line.append(str(bvalue))
 
         line.append('\n')

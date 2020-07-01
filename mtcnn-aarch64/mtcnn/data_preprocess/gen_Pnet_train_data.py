@@ -75,9 +75,11 @@ for annotation in annotations:
 
     for box in boxes:
         # box (x_left, y_top, x_right, y_bottom)
-        x1, y1, w, h = box
-        x2 = x1 + w - 1;
-        y2= y1 + h - 1;
+        x1, y1, x2, y2 = box
+        # w = x2 - x1 + 1
+        # h = y2 - y1 + 1
+        w = x2 - x1 + 1
+        h = y2 - y1 + 1
 
         # ignore small faces
         # in case the ground truth boxes of small faces are not accurate

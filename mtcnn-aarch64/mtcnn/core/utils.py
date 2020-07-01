@@ -8,7 +8,7 @@ def IoU(box, boxes):
     ----------
     box: numpy array , shape (5, ): x1, y1, x2, y2, score
         input box
-    boxes: numpy array, shape (n, 4): x1, y1, w, h
+    boxes: numpy array, shape (n, 4): x1, y1, x2, y2
         input ground truth boxes
 
     Returns:
@@ -17,11 +17,11 @@ def IoU(box, boxes):
         IoU
     """
     box_area = (box[2] - box[0] + 1) * (box[3] - box[1] + 1)
-    area = boxes[:, 2] * boxes[:, 3]
+    area = (boxes[:, 2] - boxes[:, 0] + 1) * (boxes[:, 3] - boxes[:, 1] + 1)
     xx1 = np.maximum(box[0], boxes[:, 0])
     yy1 = np.maximum(box[1], boxes[:, 1])
-    xx2 = np.minimum(box[2], boxes[:, 0] + boxes[:, 2] -1)
-    yy2 = np.minimum(box[3], boxes[:, 1] + boxes[:, 3] -1)
+    xx2 = np.minimum(box[2], boxes[:, 2])
+    yy2 = np.minimum(box[3], boxes[:, 3])
 
     # compute the width and height of the bounding box
     w = np.maximum(0, xx2 - xx1 + 1)
