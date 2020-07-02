@@ -15,8 +15,8 @@ import mtcnn.core.vision as vision
 
 prefix_path = ''
 traindata_store = './data_set/train'
-pnet_model_file = './model_store/pnet_epoch.pt'
-rnet_model_file = './model_store/rnet_epoch.pt'
+pnet_model_file = './model_store/pnet_epoch_10.pt'
+rnet_model_file = './model_store/rnet_epoch_10.pt'
 annotation_file = './anno_store/anno_train.txt'
 use_cuda = True
 
