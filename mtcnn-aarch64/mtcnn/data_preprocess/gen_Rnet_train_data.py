@@ -183,7 +183,7 @@ def gen_rnet_sample_data(data_dir, anno_file, det_boxs_file, prefix_path):
             height = y_bottom - y_top + 1
 
             # ignore box that is too small or beyond image border
-            if width < 20 or x_left < 0 or y_top < 0 or x_right > img.shape[1] - 1 or y_bottom > img.shape[0] - 1:
+            if width < 20 or height < 20 or x_left < 0 or y_top < 0 or x_right > img.shape[1] - 1 or y_bottom > img.shape[0] - 1:
                 continue
 
             # compute intersection over union(IoU) between current box and all gt boxes
