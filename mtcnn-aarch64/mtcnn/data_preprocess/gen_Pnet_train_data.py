@@ -83,7 +83,7 @@ for annotation in annotations:
 
         # ignore small faces
         # in case the ground truth boxes of small faces are not accurate
-        if max(w, h) < 40 or x1 < 0 or y1 < 0:
+        if min(w, h) < 40 or x1 < 0 or y1 < 0:
             continue
 
         # generate negative examples that have overlap with gt
