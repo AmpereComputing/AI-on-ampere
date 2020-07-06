@@ -4,6 +4,9 @@ All are verified on Ampere aarch64
 ## pytorch
 steps to run pytorch on Ampere aarch64
 
+## tensorflow
+steps to run tensorflow on Ampere aarch64
+
 ## mtcnn-aarch64
 open source face detect mtcnn on Ampere aarch64
 
